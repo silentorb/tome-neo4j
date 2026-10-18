@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+data/
+.neo4j/
+**/neo4j/data/
+**/neo4j/logs/
+**/neo4j/plugins/
+dist/
+*.tsbuildinfo

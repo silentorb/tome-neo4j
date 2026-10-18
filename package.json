@@ -1,0 +1,15 @@
+{
+  "name": "tome-neo4j-workspace",
+  "private": true,
+  "packageManager": "bun@1.3.13",
+  "workspaces": [
+    "packages/*",
+    "../tome/packages/tome-graph-interfaces",
+    "../tome/packages/tome-service-interfaces"
+  ],
+  "scripts": {
+    "typecheck": "bun run --filter '*' typecheck",
+    "test": "bun run typecheck && bun test"
+  },
+  "devDependencies": {}
+}

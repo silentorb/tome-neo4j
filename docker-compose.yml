@@ -1,0 +1,31 @@
+# Official Neo4j Community for local tome-neo4j tests.
+# Bolt: bolt://localhost:7687  HTTP: http://localhost:7474
+# Auth (dev default): neo4j / tome-neo4j-dev
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/tome-neo4j-dev}
+      # Keep the sidecar light for local/CI-style use
+      NEO4J_server_memory_heap_initial__size: 256m
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 64m
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q --spider http://localhost:7474 || exit 1",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+volumes:
+  neo4j_data:
