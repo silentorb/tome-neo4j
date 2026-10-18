@@ -5,10 +5,12 @@
   "workspaces": [
     "packages/*",
     "../tome/packages/tome-graph-interfaces",
-    "../tome/packages/tome-service-interfaces"
+    "../tome/packages/tome-service-interfaces",
+    "../imp-cypher/packages/imp-cypher",
+    "../imp-ts/packages/*"
   ],
   "scripts": {
-    "typecheck": "bun run --filter '*' typecheck",
+    "typecheck": "bun run --filter './packages/*' typecheck",
     "test": "bun run typecheck && bun test"
   },
   "devDependencies": {}

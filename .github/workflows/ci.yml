@@ -49,6 +49,20 @@ jobs:
           path: tome
           ref: ${{ vars.TOME_REF || 'main' }}
 
+      - name: Checkout imp-cypher
+        uses: actions/checkout@v4
+        with:
+          repository: silentorb/imp-cypher
+          path: imp-cypher
+          ref: ${{ vars.IMP_CYPHER_REF || 'main' }}
+
+      - name: Checkout imp-ts
+        uses: actions/checkout@v4
+        with:
+          repository: silentorb/imp-ts
+          path: imp-ts
+          ref: ${{ vars.IMP_TS_REF || 'main' }}
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:

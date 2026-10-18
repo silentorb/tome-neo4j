@@ -2,7 +2,7 @@
 
 ## What it is
 
-Neo4j store-module package for Tome (`createNeo4jModule`). Stub only until graph CRUD / Imp (Cypher) land. Loaded via `tome-server` `dataStores` when configured — not an `extensions.json` kind.
+Neo4j store-module package for Tome (`createNeo4jModule`). Stub only until graph CRUD lands. Imp → Cypher compile lives in sibling package `tome-imp-cypher`. Loaded via `tome-server` `dataStores` when configured — not an `extensions.json` kind.
 
 ## Dependency rules
 
